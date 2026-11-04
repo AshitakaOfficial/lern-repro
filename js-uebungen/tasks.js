@@ -28,5 +28,21 @@ function offeneAufgaben(aufgabenListe) {
 //  return aufgabenListe.filter((task) => task.erledigt === false);
 // }
 
-const ergebnis = offeneAufgaben(tasks);
-console.log(ergebnis)
+// const ergebnis = offeneAufgaben(tasks);
+// console.log(ergebnis)
+
+function alleTitel (aufgabenMapping) {
+    return aufgabenMapping.map((task) => task.title)
+}
+
+const ergebnisMap = alleTitel(tasks)
+
+// console.log(ergebnisMap)
+
+function findeAufgabe (aufgaben, id) {
+    return aufgaben.find((task) => task.id === (id))
+}
+const ergebnisFind = findeAufgabe(tasks, 1)
+const ergebnisFindUndefined = findeAufgabe (tasks, 99)
+console.log(ergebnisFind)
+console.log(ergebnisFindUndefined)
