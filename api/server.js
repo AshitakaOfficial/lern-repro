@@ -2,11 +2,11 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json())
 app.use((req, res, next) => {
   console.log(req.method + " " + req.url);
   next();
-}); 
+});
 
 let tasks = [
   { id: 1, title: "Einkaufen", done: false },
@@ -55,9 +55,8 @@ app.delete("/tasks/:id", (req, res) => {
   if (!task) {
     return res.status(404).json({ message: "Aufgabe nicht gefunden" });
   }
-
   tasks = tasks.filter(t => t.id !== id);
-  res.status(200).json(task);
+  res.status(200).json(task)
 });
 
 app.listen(3000, () => {
